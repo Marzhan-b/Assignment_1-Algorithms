@@ -125,7 +125,7 @@ Let `T(n)` be the running time of MergeSort on an input of size `n`.
 T(n) = 2T(n/2) + Θ(n) (average case with random pivot)  
 Expected runtime: Θ(n log n)
 
-### Benchmark Results (sample)
+### Benchmark Results 
 
 | Algorithm | Input Size | Avg Time (ms) | Avg Comparisons | Avg Swaps | Avg MaxDepth |
 | --------- | ---------- | ------------- | --------------- | --------- | ------------ |
