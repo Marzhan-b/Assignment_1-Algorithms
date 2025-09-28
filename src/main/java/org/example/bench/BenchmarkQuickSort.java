@@ -1,4 +1,4 @@
-package org.example.algorithms;
+package org.example.bench;
 
 import org.example.algorithms.QuickSort;
 import org.example.metrics.Metrics;

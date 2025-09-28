@@ -18,7 +18,7 @@ public class Metrics {
 
     public void enter() {
         currentDepth++;
-        if (currentDepthд > maxDepth) {
+        if (currentDepth > maxDepth) {
             maxDepth = currentDepth;
         }
     }
@@ -38,5 +38,22 @@ public class Metrics {
     public int getMaxDepth() {
         return maxDepth;
     }
+    public void incComparisons() {
+        comparisons++;
+    }
+
+    public void incSwaps() {
+        swaps++;
+    }
+
+    private long allocations = 0;
+    public void incAllocations() {
+        allocations++;
+    }
+
+    public long getAllocations() {
+        return allocations;
+    }
+
 }
 
