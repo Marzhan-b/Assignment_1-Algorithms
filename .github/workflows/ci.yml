@@ -1,10 +1,10 @@
-name: Java CI with Maven
+name: CI
 
 on:
   push:
-    branches: [ feature/mergesort, main ]
+    branches: [ main ]
   pull_request:
-    branches: [ feature/mergesort, main ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -12,15 +12,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Set up JDK 17
+      - name: Set up JDK
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
-
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn -B clean test
 
-      - name: Run tests
-        run: mvn test -Dtest=MergeSortTest
+      - name: Upload CSV results
+        uses: actions/upload-artifact@v3
+        with:
+          name: benchmark-results
+          path: results.csv

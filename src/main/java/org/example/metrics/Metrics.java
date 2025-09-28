@@ -1,62 +1,42 @@
 package org.example.metrics;
 
 public class Metrics {
-    private int comparisons = 0;
-    private int swaps = 0;
-    private int allocations = 0;
-    private int currentDepth = 0;
+    private long comparisons = 0;
+    private long swaps = 0;
     private int maxDepth = 0;
+    private int currentDepth = 0;
 
-    // вход в рекурсию
+    // Считаем сравнения и возвращаем результат
+    public boolean comp(int a, int b) {
+        comparisons++;
+        return a < b;
+    }
+
+    public void swap() {
+        swaps++;
+    }
+
     public void enter() {
         currentDepth++;
-        if (currentDepth > maxDepth) {
+        if (currentDepthд > maxDepth) {
             maxDepth = currentDepth;
         }
     }
 
-    // выход из рекурсии
     public void exit() {
         currentDepth--;
     }
 
-    // инкременты
-    public void incComparisons() {
-        comparisons++;
-    }
-
-    public void incSwaps() {
-        swaps++;
-    }
-
-    public void incAllocations() {
-        allocations++;
-    }
-
-    // геттеры
-    public int getComparisons() {
+    public long getComparisons() {
         return comparisons;
     }
 
-    public int getSwaps() {
+    public long getSwaps() {
         return swaps;
-    }
-
-    public int getAllocations() {
-        return allocations;
     }
 
     public int getMaxDepth() {
         return maxDepth;
     }
-
-    @Override
-    public String toString() {
-        return "Metrics{" +
-                "comparisons=" + comparisons +
-                ", swaps=" + swaps +
-                ", allocations=" + allocations +
-                ", maxDepth=" + maxDepth +
-                '}';
-    }
 }
+
