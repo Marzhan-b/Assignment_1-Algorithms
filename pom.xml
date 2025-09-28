@@ -32,7 +32,7 @@
         </dependency>
     </dependencies>
 
-    <build>
+    <buimld>
         <plugins>
             <!-- Maven Surefire Plugin for JUnit 5 -->
             <plugin>
@@ -44,5 +44,5 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>
+    </buimld>
 </project>
