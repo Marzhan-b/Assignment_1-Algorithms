@@ -108,3 +108,28 @@ Let `T(n)` be the running time of MergeSort on an input of size `n`.
 * Recursion depth grows logarithmically, as expected.
 * Comparisons and allocations scale as `O(n log n)`.
 * Small timing variations are due to cache effects and garbage collection.
+
+
+
+## QuickSort
+
+### Architecture Notes
+
+* **Divide-and-conquer:** recursive split with smaller-first recursion.
+* **Randomized pivot:** shuffle array before sorting.
+* **Depth control:** recursion depth tracked in `Metrics`.
+* **Metrics:** comparisons, swaps, max recursion depth.
+
+### Recurrence Analysis
+
+T(n) = 2T(n/2) + Θ(n) (average case with random pivot)  
+Expected runtime: Θ(n log n)
+
+### Benchmark Results (sample)
+
+| Algorithm | Input Size | Avg Time (ms) | Avg Comparisons | Avg Swaps | Avg MaxDepth |
+| --------- | ---------- | ------------- | --------------- | --------- | ------------ |
+| QuickSort | 1,000      | 1.2           | 9,130           | 1,697     | 8            |
+| QuickSort | 5,000      | 1.0           | 58,572          | 11,044    | 10           |
+| QuickSort | 10,000     | 1.0           | 127,109         | 22,057    | 11           |
+| QuickSort | 50,000     | 5.6           | 729,020         | 64,101    | 14           |
