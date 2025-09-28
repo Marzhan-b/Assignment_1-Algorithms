@@ -69,4 +69,23 @@ public class MergeSortTest {
         assertArrayEquals(expected, array);
         System.out.println("All equal elements metrics: " + m);
     }
+    @Test
+    void testLargeRandomArrayDepth() {
+        int n = 1000;
+        int[] array = new int[n];
+        for (int i = 0; i < n; i++) {
+            array[i] = (int) (Math.random() * 10000);
+        }
+
+        int[] expected = Arrays.copyOf(array, array.length);
+        Arrays.sort(expected);
+
+        Metrics m = new Metrics();
+        MergeSort.sort(array, m);
+
+        assertArrayEquals(expected, array);
+        System.out.println("Large random array metrics: " + m);
+        System.out.println("Max recursion depth for large array: " + m.getMaxDepth());
+    }
+
 }
