@@ -19,7 +19,7 @@ public class MergeSortTest {
         MergeSort.sort(array, m);
 
         assertArrayEquals(expected, array);
-        System.out.println(m);
+        System.out.println("Random array metrics: " + m);
     }
 
     @Test
@@ -31,6 +31,42 @@ public class MergeSortTest {
         MergeSort.sort(array, m);
 
         assertArrayEquals(expected, array);
-        System.out.println(m);
+        System.out.println("Empty array metrics: " + m);
+    }
+
+    @Test
+    void testSingleElementArray() {
+        int[] array = {42};
+        int[] expected = {42};
+
+        Metrics m = new Metrics();
+        MergeSort.sort(array, m);
+
+        assertArrayEquals(expected, array);
+        System.out.println("Single element metrics: " + m);
+    }
+
+    @Test
+    void testSortedArray() {
+        int[] array = {1, 2, 3, 4, 5};
+        int[] expected = {1, 2, 3, 4, 5};
+
+        Metrics m = new Metrics();
+        MergeSort.sort(array, m);
+
+        assertArrayEquals(expected, array);
+        System.out.println("Already sorted metrics: " + m);
+    }
+
+    @Test
+    void testAllEqualElements() {
+        int[] array = {7, 7, 7, 7};
+        int[] expected = {7, 7, 7, 7};
+
+        Metrics m = new Metrics();
+        MergeSort.sort(array, m);
+
+        assertArrayEquals(expected, array);
+        System.out.println("All equal elements metrics: " + m);
     }
 }
