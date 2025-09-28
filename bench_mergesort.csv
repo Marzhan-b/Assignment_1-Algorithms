@@ -1,0 +1,5 @@
+algorithm,input_size,trials,avg_time_ms,avg_comparisons,avg_swaps,avg_allocations,avg_maxDepth
+MergeSort,1000,5,1,200,9129,80,1697,00,127,00,8,00
+MergeSort,5000,5,1,000,58571,80,11044,00,511,00,10,00
+MergeSort,10000,5,1,000,127108,60,22057,00,1023,00,11,00
+MergeSort,50000,5,5,600,729019,60,64100,80,8191,00,14,00
