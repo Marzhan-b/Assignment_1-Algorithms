@@ -1,0 +1,4 @@
+algorithm,input_size,trials,avg_time_ms,avg_comparisons,avg_swaps,avg_maxDepth
+DeterministicSelect,1000,5,1,000,0,00,0,00,0,00
+DeterministicSelect,5000,5,0,000,0,00,0,00,0,00
+DeterministicSelect,10000,5,0,000,0,00,0,00,0,00
